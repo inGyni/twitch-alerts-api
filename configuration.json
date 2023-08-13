@@ -1,0 +1,15 @@
+{
+    "DOMAIN": "https://api.domain.com",
+    "CLIENT_ID": "YOUR_CLIENT_ID",
+    "CLIENT_SECRET": "YOUR_CLIENT_SECRET",
+    "WEBHOOK_SECRET": "YOUR_WEBHOOK_SECRET",
+    "USER_ID": "YOUR_USER_ID",
+    "CALLBACK_URL": "/stream-webhook",
+    "WEBHOOK_ENDPOINT": "/stream-webhook",
+    "START_STREAM_ENDPOINT": "/start-stream",
+    "SUBSCRIBE_URL": "https://api.twitch.tv/helix/eventsub/subscriptions",
+    "TOKEN_URL": "https://id.twitch.tv/oauth2/token",
+    "REDIRECT_ENDPOINT": "/oauth/callback",
+    "SERVER_ACCESS_KEY": "YOUR_ACCESS_KEY",
+    "APP_PORT": 3000
+}

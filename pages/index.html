@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Twitch Alerts</title>
+</head>
+<body>
+    <div id="content">
+        <h1>Welcome to the event stream!</h1>
+    </div>
+
+    <style>
+        #content {
+            color: red;
+            background-color: transparent;
+        }
+    </style>
+
+    <script>
+        const eventSource = new EventSource('/events');
+
+        function handleEvent(data) {
+            const content = document.getElementById('content');
+            console.log(data)
+            content.innerHTML = data.content;
+        }
+
+        eventSource.onmessage = (event) => {
+            handleEvent(JSON.parse(event.data));
+        };
+
+        eventSource.onerror = (error) => {
+            console.error('Error with SSE connection:', error);
+            eventSource.close();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "channel.follow": {
+        "type": "channel.follow",
+        "version": "2",
+        "condition": {
+            "broadcaster_user_id": "0",
+            "moderator_user_id": "0"
+        }
+    },
+    "channel.subscribe": {
+        "type": "channel.subscribe",
+        "version": "1",
+        "condition": {
+            "broadcaster_user_id": "0"
+        }
+    }
+}
