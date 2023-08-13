@@ -5,11 +5,11 @@
 const { DOMAIN, REDIRECT_ENDPOINT, CLIENT_ID, CLIENT_SECRET, WEBHOOK_ENDPOINT, START_STREAM_ENDPOINT, TOKEN_URL, SERVER_ACCESS_KEY, APP_PORT } = require("./configuration.json");
 
 const express = require('express');
-const https = require('http');
+const http = require('http');
 const crypto = require('crypto');
 
 const app = express();
-const server = https.createServer(app);
+const server = http.createServer(app);
 
 const { GetAccessToken } = require('./functions/authorization.js');
 const { StartStream, StopStream } = require('./functions/monitor.js');
