@@ -66,6 +66,8 @@ npm install express axios events http crypto
 
 To use the Twitch Alerts API, you need to have a Twitch Developer Application, and you need to have the Client ID and Client Secret in the `configuration.json` file.
 
+You also need to add `YOUR_WEBHOOK_SECRET`, `YOUR_USER_ID` and `YOUR_ACCESS_KEY` in the `configuration.json` file. The webhook secret can be any string you want, the user id is the id of the user you want to authorize the application to, and the access key is the key which will be used to check who is trying to access the API when starting the monitor.
+
 ### Starting the API
 
 To start the API, run the following command in the terminal:
@@ -97,6 +99,10 @@ To edit the alerts, you can edit the `event_handler.js` file and the `index.html
 There you can add, remove, edit and customize the alerts to your liking.
 
 ## Using the API with OBS
+
+For the API to work with OBS, you need to have the API running and subscribed to the events you want to use. To do this, you need to send a POST request to the `/start-stream` endpoint with the access key you set in the `configuration.json` file. This will start the monitor and subscribe to the events you want to use.
+
+I've included a python script in `/scripts` which you can use to send the POST request to the API. To use it you have to add it as a script in OBS. It will automatically send the POST request when you start streaming. Be sure to edit the `access_key` variable in the script to match the access key you set in the `configuration.json` file. You may also need to edit the `url` variable if you are not running the API on the same computer as OBS.
 
 To use the API with OBS, you need to add a Browser Source to your scene, and set the URL to `http://localhost:3000/alerts`.
 
